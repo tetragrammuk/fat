@@ -1,0 +1,8 @@
+.sharedWidth {
+	width:230px;
+}
+/* font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif; */
+.sharedWidth /deep/ .el-button {
+	width:230px;
+	margin-top: 5px;
+}
