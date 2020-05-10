@@ -22,7 +22,7 @@
           @input="showButton"
         ></el-input>
       </div>
-      <div style="padding:5px">
+      <!-- <div style="padding:5px">
         <p>通知訊息</p>
         <el-input
           maxlength="10"
@@ -31,7 +31,7 @@
           @change="getButtonInfoMsg"
           placeholder="請輸入通知訊息"
         ></el-input>
-      </div>
+      </div> -->
       <div style="text-align: left; margin: 0; padding:5px">
         <p>互動區塊</p>
         <el-radio v-model="button.radio" label="1">發送訊息</el-radio>

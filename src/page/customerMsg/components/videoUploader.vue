@@ -10,7 +10,7 @@
       :class="{ dragging: isDragging, hadFile: isHadFile }"
     >
       <div
-      v-loading="loading"
+        v-loading="loading"
         v-show="!images.length"
         style="display: flex;flex-direction: column; justify-content: center;align-items: center;"
       >
@@ -44,9 +44,8 @@
 
 <script>
 import axios from "axios";
-import { getToken } from '@/utils/auth' ; 
+import { getToken } from "@/utils/auth";
 export default {
-
   name: "videoUpload",
   props: {
     comID: 0,
@@ -54,7 +53,7 @@ export default {
   },
   data() {
     return {
-      loading : false,
+      loading: false,
       videoLink: "",
       isDragging: false,
       isHadFile: false,
@@ -84,14 +83,12 @@ export default {
       let f = new FormData();
       f.append("image", this.test.file);
       // Upload image api
-      let token = getToken('Token');
       axios({
         method: "post",
         url: "https://api.imgur.com/3/image",
         data: f,
         headers: {
-          Authorization: "Client-ID 144a5de7a410723",
-          'x-access-token': token
+          Authorization: "Client-ID 144a5de7a410723"
         },
         mimeType: "multipart/form-data"
       }).then(response => {
@@ -102,24 +99,25 @@ export default {
     },
 
     submit(file) {
-      if(file.size > 10 * 1024 *1024){
-        this.$message.error('影片大小超過上限 10MB !');
-        this.isHadFile = false;
-        return;
-      }
-this.loading = true;
+      // if (file.size > 10 * 1024 * 1024) {
+      //   this.$message.error("影片大小超過上限 10MB !");
+      //   this.isHadFile = false;
+      //   return;
+      // }
+      this.loading = true;
 
       let f = new FormData();
       f.append("file", file);
       // Upload image api
-      let token = getToken('Token');
+      let token = getToken("Token");
       axios({
         method: "post",
-        url: "https://test-backend-dot-flow-263607.appspot.com/video_link",
+        // url: "https://https://test-backend-dot-flow-263607.appspot.com/video_link",
+        url: "http://theflowchat.com:5000/video_link",
         data: f,
         headers: {
           "Content-Type": "multipart/form-data",
-          'x-access-token': token
+          "x-access-token": token
         }
         // mimeType: "multipart/form-data"
       }).then(response => {
@@ -127,7 +125,6 @@ this.loading = true;
         this.videoLink = response.data.video_link;
         this.$bus.$emit("videoUrlEvent" + this.comID, this.videoLink);
         this.loading = false;
-
       });
     },
 

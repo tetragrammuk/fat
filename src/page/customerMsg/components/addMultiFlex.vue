@@ -189,14 +189,16 @@ export default {
                 text: this.titles[i],
                 weight: "bold",
                 color: "#1DB446",
-                size: "sm"
+                size: "sm",
+                wrap: true
               },
               {
                 type: "text",
                 text: this.texts[i],
                 weight: "bold",
                 size: "md",
-                margin: "md"
+                margin: "md",
+                wrap: true
               }
             ]
           },

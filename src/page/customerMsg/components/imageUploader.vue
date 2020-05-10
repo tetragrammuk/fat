@@ -23,6 +23,7 @@
           <label for="file">選擇檔案</label>
           <input type="file" id="file" @change="onInputChange">
         </div>
+        <div style="color: red">圖片長寬須為 1 : 1</div>
       </div>
 
       <div class="images-preview" v-show="images.length">
@@ -177,7 +178,7 @@ export default {
 <style lang="scss" scoped>
 .uploader {
   width: 230px;
-  height: 180px;
+  height: 230px;
   background: #fff;
   color: #3d3e3f;
   // padding: 40px 15px;
@@ -191,7 +192,7 @@ export default {
   &.dragging {
     background: #3d3e3f;
     color: #fff;
-    border: 3px dashed #3d3e3f;
+    border: 2px dashed #3d3e3f;
 
     .file-input label {
       background: #3d3e3f;
@@ -200,7 +201,7 @@ export default {
   }
 
   &.hadFile {
-    border: 3px solid #3d3e3f;
+    border: 2px solid #3d3e3f;
   }
 
   i {

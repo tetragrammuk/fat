@@ -640,6 +640,7 @@ export default {
           .getElementById("common_chat_input")
           .innerHTML.replace(/\"/g, '\\"')
           .replace(/%/g, '%%')
+          .replace(/\\/g, '\\\\')
         // "464<img style=\\\"width: 30px;margin-bottom:-8px;\\\" src = \\\"https://storage.cloud.google.com/line_emoji/0x10007A.png\\\">&nbsp;"
         //document.getElementById("common_chat_input").innerHTML
       };

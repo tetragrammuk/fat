@@ -17,7 +17,7 @@
               @input="showTitle"
               @change="getFlexTitle"
               placeholder="請輸入標題"
-              maxlength="20"
+              maxlength="50"
               show-word-limit
             ></el-input>
           </el-form-item>
@@ -27,7 +27,7 @@
               @input="showText"
               @change="getFlexText"
               placeholder="請輸入敘述"
-              maxlength="50"
+              maxlength="500"
               rows=3
               :autosize="{ minRows: 3, maxRows: 3 }"
               show-word-limit
